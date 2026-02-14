@@ -217,7 +217,7 @@ $('#rsvp-form').on('submit', function (e) {
     $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern eure Rückmeldung…'));
 
     // TODO: hier deine eigene Apps-Script WebApp URL eintragen
-    var scriptURL = 'https://script.google.com/macros/s/AKfycbwc7uOZag_Zh7Zsnes8Qmf_Bnj7aFtQy6ouy_QjRty7Gr1Ik0SZHp4ni1EQ3dzuoonFVA/exec';
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbxW8WmbWhDZe4ajIadOFGyvo0CqJGXIZyUaBDCOhOXRnvNKUnvJo8SP6oSRX-5ffkRtBA/exec';
 
     $.post(scriptURL, data)
         .done(function (resp) {
