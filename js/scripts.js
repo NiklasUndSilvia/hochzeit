@@ -207,33 +207,37 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 
 
-    /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+/********************** RSVP **********************/
+$('#rsvp-form').on('submit', function (e) {
+    e.preventDefault();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+    // Serialize form fields -> email, name, extras (invite_code hast du aus HTML entfernt)
+    var data = $(this).serialize();
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });
+    $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern eure Rückmeldung…'));
+
+    // TODO: hier deine eigene Apps-Script WebApp URL eintragen
+    var scriptURL = 'https://script.google.com/macros/s/DEIN_DEPLOYMENT_ID/exec';
+
+    $.post(scriptURL, data)
+        .done(function (resp) {
+            console.log(resp);
+            if (resp && resp.result === "error") {
+                $('#alert-wrapper').html(alert_markup('danger', resp.message || 'Unbekannter Fehler.'));
+            } else {
+                $('#alert-wrapper').html('');
+                $('#rsvp-modal').modal('show');
+                $('#rsvp-form')[0].reset();
+            }
+        })
+        .fail(function (err) {
+            console.log(err);
+            $('#alert-wrapper').html(
+                alert_markup('danger', '<strong>Sorry!</strong> Es gab ein Problem beim Absenden. Bitte später nochmal versuchen.')
+            );
+        });
+});
+
 
 });
 
