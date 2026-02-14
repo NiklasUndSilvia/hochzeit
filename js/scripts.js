@@ -190,7 +190,7 @@ $('#rsvp-form').on('submit', function (e) {
     $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern eure Rückmeldung…'));
 
    
-    var scriptURL = 'https://script.google.com/macros/s/AKfycbxW8WmbWhDZe4ajIadOFGyvo0CqJGXIZyUaBDCOhOXRnvNKUnvJo8SP6oSRX-5ffkRtBA/exec';
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbzP5kNVUmzt9075VxJjLUmU8V38wdE8CIiH4wc5qAMIrMIS1Kek3mh0JWBnTMVrQVHyow/exec';
 
     $.post(scriptURL, data)
         .done(function (resp) {
