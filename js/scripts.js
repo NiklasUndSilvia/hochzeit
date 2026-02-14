@@ -187,7 +187,7 @@ $('#rsvp-form').on('submit', function (e) {
     // Serialize form fields -> name, extras 
     var data = $(this).serialize();
 
-    $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern eure Rückmeldung…'));
+    $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern deine Rückmeldung…'));
 
    
     var scriptURL = 'https://script.google.com/macros/s/AKfycbzP5kNVUmzt9075VxJjLUmU8V38wdE8CIiH4wc5qAMIrMIS1Kek3mh0JWBnTMVrQVHyow/exec';
