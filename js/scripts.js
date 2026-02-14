@@ -184,7 +184,7 @@ $(document).ready(function () {
 $('#rsvp-form').on('submit', function (e) {
     e.preventDefault();
 
-    // Serialize form fields -> email, name, extras (invite_code hast du aus HTML entfernt)
+    // Serialize form fields -> name, extras 
     var data = $(this).serialize();
 
     $('#alert-wrapper').html(alert_markup('info', '<strong>Einen Moment!</strong> Wir speichern eure Rückmeldung…'));
