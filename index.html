@@ -86,7 +86,6 @@
 <ul class="member-actions">
 <li><a class="login" href="#map"><span class="lang-de">Wohin muss ich?</span><span class="lang-it"></span></a></li>
 <li><a class="btn-white btn-small" href="#rsvp"><span class="lang-de">Zusagen</span><span class="lang-it"></span></a></li>
-<li class="lang-switch"><a href="#" id="lang-de-btn" onclick="setLang('de'); return false;">DE</a><span class="sep">|</span><a href="#" id="lang-it-btn" onclick="setLang('it'); return false;">IT</a></li></ul>
 </nav>
 </div>
 <div class="navicon">
@@ -107,10 +106,30 @@
 </div>
 </div>
 <div class="row">
-<div class="col-sm-4 hidden-xs"></div>
-<div class="col-sm-4 hidden-xs text-center"><a class="btn btn-accent btn-large rsvp-btn" href="#rsvp"><span class="lang-de">Zusagen</span><span class="lang-it"></span></a></div>
-<div class="col-sm-4 hidden-xs"></div>
+  <div class="col-sm-4 hidden-xs"></div>
+
+  <div class="col-sm-4 hidden-xs text-center">
+
+    <!-- Language switcher above RSVP button -->
+    <div class="hero-lang-switch">
+      <a href="#" onclick="setLang('de'); return false;" id="lang-de-btn" class="lang-flag">
+        <img src="img/flags/de.png" alt="Deutsch">
+      </a>
+      <a href="#" onclick="setLang('it'); return false;" id="lang-it-btn" class="lang-flag">
+        <img src="img/flags/it.png" alt="Italiano">
+      </a>
+    </div>
+
+    <a class="btn btn-accent btn-large rsvp-btn" href="#rsvp">
+      <span class="lang-de">Zusagen</span>
+      <span class="lang-it"></span>
+    </a>
+
+  </div>
+
+  <div class="col-sm-4 hidden-xs"></div>
 </div>
+
 </div>
 <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
