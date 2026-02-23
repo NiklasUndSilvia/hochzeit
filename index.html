@@ -87,6 +87,55 @@
   opacity: 1;
 }
 
+.gifts-link-wrapper{
+  margin-top: 12px;
+}
+.gifts-link{
+  font-size: 13px;
+  opacity: 0.75;
+  text-decoration: underline;
+}
+.gifts-link:hover{
+  opacity: 1;
+}
+
+.gift-bank-box{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+}
+.gift-row{
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.gift-row:last-child{
+  border-bottom: 0;
+}
+.gift-label{
+  width: 140px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.gift-value{
+  flex: 1;
+  word-break: break-word;
+}
+.gift-mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: 0.3px;
+}
+.gift-small{
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+@media (max-width: 480px){
+  .gift-row{ flex-direction: column; gap: 4px; }
+  .gift-label{ width: auto; }
+}
         
   .lang-it { display: none; }
   .lang-switch a { cursor: pointer; }
@@ -325,6 +374,80 @@ Piccolo consiglio per le donne: nel parco, se ha piovuto, il terreno può divent
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<!-- Geschenke Modal -->
+<div class="modal fade" id="gifts-modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span class="lang-de"><span>×</span></span>
+          <span class="lang-it">x</span>
+        </button>
+
+        <h3 class="text-center section-padding">
+          <span class="lang-de">Geschenke</span>
+          <span class="lang-it">Regali</span>
+        </h3>
+
+        <p>
+          <span class="lang-de">
+            Das Schönste ist, dass du diesen Tag mit uns verbringst. ❤️<br>
+            Wenn du uns trotzdem etwas schenken möchtest, freuen wir uns über einen Beitrag zu unserer gemeinsamen Zukunft.
+          </span>
+          <span class="lang-it">
+            Il regalo più bello è che tu sia con noi quel giorno. ❤️<br>
+            Se desideri comunque farci un regalo, saremo felici di un contributo per il nostro futuro insieme.
+          </span>
+        </p>
+
+        <div class="gift-bank-box">
+          <div class="gift-row">
+            <div class="gift-label">
+              <span class="lang-de">Empfänger</span>
+              <span class="lang-it">Intestatario</span>
+            </div>
+            <div class="gift-value">
+              Silvia XXX &amp; Niklas XXX
+            </div>
+          </div>
+
+          <div class="gift-row">
+            <div class="gift-label">IBAN</div>
+            <div class="gift-value gift-mono">
+              DE00 0000 0000 0000 0000 00
+            </div>
+          </div>
+
+          <div class="gift-row">
+            <div class="gift-label">BIC</div>
+            <div class="gift-value gift-mono">
+              ABCDDEFFXXX
+            </div>
+          </div>
+
+          <div class="gift-row gift-note">
+            <div class="gift-label">
+              <span class="lang-de">Verwendungszweck</span>
+              <span class="lang-it">Causale</span>
+            </div>
+            <div class="gift-value">
+              <span class="lang-de">Hochzeit Silvia &amp; Niklas</span>
+              <span class="lang-it">Matrimonio Silvia &amp; Niklas</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="gift-small">
+          <span class="lang-de">Tipp: Du kannst die IBAN markieren und kopieren.</span>
+          <span class="lang-it">Consiglio: puoi selezionare e copiare l’IBAN.</span>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Geschenke Modal -->
 <section class="section-padding" id="accommodation">
 <div class="container">
 <div class="row">
@@ -428,6 +551,12 @@ Piccolo consiglio per le donne: nel parco, se ha piovuto, il terreno può divent
                         Ich bin dabei!
                     </span><span class="lang-it">Ci sarò!</span></button>
 </form>
+<div class="text-center gifts-link-wrapper">
+  <a href="#" class="gifts-link" data-toggle="modal" data-target="#gifts-modal">
+    <span class="lang-de">• Geschenke</span>
+    <span class="lang-it">• Regali</span>
+  </a>
+</div>
 </div>
 </div>
 </div>
