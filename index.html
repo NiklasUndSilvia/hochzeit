@@ -88,7 +88,7 @@
 }
 
 .gifts-link-wrapper{
-  margin-top: 12px;
+  margin-top: 30px;
 }
 .gifts-link{
   font-size: 13px;
@@ -98,7 +98,16 @@
 .gifts-link:hover{
   opacity: 1;
 }
+.gifts-btn{
+  opacity: 0.85;
+  transform: scale(0.9);   
+  transition: all 0.2s ease;
+}
 
+.gifts-btn:hover{
+  opacity: 1;
+  transform: scale(0.95);
+}
 .gift-bank-box{
   margin-top: 14px;
   padding: 14px;
@@ -552,9 +561,12 @@ Piccolo consiglio per le donne: nel parco, se ha piovuto, il terreno può divent
                     </span><span class="lang-it">Ci sarò!</span></button>
 </form>
 <div class="text-center gifts-link-wrapper">
-  <a href="#" class="gifts-link" data-toggle="modal" data-target="#gifts-modal">
-    <span class="lang-de">• Geschenke</span>
-    <span class="lang-it">• Regali</span>
+  <a class="btn btn-accent btn-small gifts-btn"
+     data-toggle="modal"
+     data-target="#gifts-modal">
+    <span class="lang-de">Geschenke</span>
+    <span class="lang-it">Regali</span>
+    <i class="fa fa-gift"></i>
   </a>
 </div>
 </div>
