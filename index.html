@@ -60,6 +60,74 @@
 <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </meta><style>
 
+/* ===== Desktop Navbar Fix ===== */
+@media (min-width: 992px){
+  header{
+    width: 100% !important;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Header-Inhalt als Flex */
+  header .header-content{
+    display:flex;
+    align-items:center;
+  }
+
+  header .logo{
+    flex:0 0 auto;
+  }
+
+  header .header-nav{
+    flex:1 1 auto;
+    min-width:0;
+    display:block !important;
+  }
+
+  /* nav: links + rechts nebeneinander */
+  header .header-nav nav{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+  }
+
+  /* linke Navigation darf flexibel sein */
+  header ul.primary-nav{
+    margin:0 0 0 45px !important; /* statt 75px => schicker/kompakter */
+    flex:1 1 auto;
+    min-width:0;
+    display:flex;
+    flex-wrap:wrap;            /* elegant umbrechen statt überlappen */
+    row-gap: 8px;
+  }
+
+  header ul.primary-nav li a{
+    padding-right: 18px;       /* etwas kompakter */
+    white-space: nowrap;
+  }
+
+  /* rechter Bereich NICHT mehr absolut */
+  header .member-actions{
+    position: static !important;
+    top:auto !important;
+    right:auto !important;
+    margin-left:auto;          /* ganz rechts */
+    white-space: nowrap;
+  }
+}
+
+/* ===== Italienisch: minimal kompakter ===== */
+@media (min-width: 992px){
+  html[lang="it"] header ul.primary-nav li a{
+    font-size: 12px;           /* dezent kleiner nur in IT */
+    padding-right: 14px;
+  }
+  html[lang="it"] header a.login{
+    margin-right: 12px;        /* etwas weniger Abstand */
+  }
+}
+        
 .hero-lang-switch {
   margin-bottom: 14px;
 }
